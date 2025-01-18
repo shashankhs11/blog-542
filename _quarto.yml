@@ -3,7 +3,7 @@ project:
   output-dir: docs
 
 website:
-  title: "Blog"
+  title: "How to Write Clean and Maintainable Data Science Code: Lessons from Software Engineering"
   navbar:
     right:
       - about.qmd
