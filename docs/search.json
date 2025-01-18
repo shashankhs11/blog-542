@@ -23,8 +23,57 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Blog",
+    "title": "How to Write Clean and Maintainable Data Science Code: Lessons from Software Engineering",
     "section": "",
-    "text": "Post With Code\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\nJan 18, 2025\n\n\nHarlow Malloc\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nJan 15, 2025\n\n\nTristan O’Malley\n\n\n\n\n\n\nNo matching items"
+    "text": "Data science projects often begin as exploratory analyses with quick iterations and experiments. However, as projects grow, messy code and unorganized workflows can lead to reproducibility nightmares, debugging headaches, and team collaboration struggles.\nThe good news? Borrowing principles from software engineering can transform chaotic data science projects into clean, maintainable, and scalable systems. This blog dives into three core strategies—code organization, modular design, and best practices—to help you write data science code that’s a joy to work with."
+  },
+  {
+    "objectID": "index.html#recommended-directory-structure",
+    "href": "index.html#recommended-directory-structure",
+    "title": "How to Write Clean and Maintainable Data Science Code: Lessons from Software Engineering",
+    "section": "Recommended Directory Structure",
+    "text": "Recommended Directory Structure\nHere’s an example structure for a machine learning project:\nproject/\n│\n├── data/\n│   ├── raw/           # Raw data files\n│   ├── processed/     # Processed data\n│\n├── notebooks/         # Jupyter Notebooks for exploration\n├── src/               # Source code\n│   ├── data/          # Data loading and preprocessing scripts\n│   ├── models/        # Model training and evaluation scripts\n│   ├── utils/         # Utility functions\n│\n├── results/           # Generated outputs (plots, reports, etc.)\n├── config.yaml        # Configuration file for parameters\n└── README.md          # Project overview and setup instructions\nThis structure helps team members understand where to find specific components. Using configuration files (e.g., config.yaml) avoids hardcoding file paths and parameters, making the project more adaptable."
+  },
+  {
+    "objectID": "index.html#breaking-down-the-code",
+    "href": "index.html#breaking-down-the-code",
+    "title": "How to Write Clean and Maintainable Data Science Code: Lessons from Software Engineering",
+    "section": "Breaking Down the Code",
+    "text": "Breaking Down the Code\nModular design involves splitting code into reusable functions or classes. For example:\n\nRaw Notebook Code:\n# Load data\ndf = pd.read_csv(\"data/raw/dataset.csv\")\n\n# Preprocess\ndf = df.dropna()\ndf['feature'] = df['feature'].apply(lambda x: x ** 2)\n\n# Train model\nmodel = RandomForestClassifier()\nmodel.fit(df.drop('target', axis=1), df['target'])\n\n\nRefactored Modular Code:\n# src/data_preprocessing.py\ndef preprocess_data(df):\n    df = df.dropna()\n    df['feature'] = df['feature'].apply(lambda x: x ** 2)\n    return df\nBy moving repetitive tasks into standalone scripts, you can reuse and test functions easily. For larger projects, consider using object-oriented design to encapsulate related functionality."
+  },
+  {
+    "objectID": "index.html#comments-and-documentation",
+    "href": "index.html#comments-and-documentation",
+    "title": "How to Write Clean and Maintainable Data Science Code: Lessons from Software Engineering",
+    "section": "Comments and Documentation",
+    "text": "Comments and Documentation\nUse docstrings to describe what functions do, their inputs, and their outputs. A well-documented function is self-explanatory:\ndef preprocess_data(df):\n    \"\"\"\n    Cleans and preprocesses the input DataFrame.\n\n    Args:\n        df (pd.DataFrame): Raw data.\n\n    Returns:\n        pd.DataFrame: Preprocessed data.\n    \"\"\""
+  },
+  {
+    "objectID": "index.html#follow-style-guides",
+    "href": "index.html#follow-style-guides",
+    "title": "How to Write Clean and Maintainable Data Science Code: Lessons from Software Engineering",
+    "section": "Follow Style Guides",
+    "text": "Follow Style Guides\nAdopt PEP 8 for Python. Tools like Black and flake8 automate style enforcement. This consistency makes reading and debugging code easier."
+  },
+  {
+    "objectID": "index.html#use-version-control",
+    "href": "index.html#use-version-control",
+    "title": "How to Write Clean and Maintainable Data Science Code: Lessons from Software Engineering",
+    "section": "Use Version Control",
+    "text": "Use Version Control\nGit is a must for collaboration. Use meaningful commit messages and branch strategies like GitFlow for smoother workflows."
+  },
+  {
+    "objectID": "index.html#test-your-code",
+    "href": "index.html#test-your-code",
+    "title": "How to Write Clean and Maintainable Data Science Code: Lessons from Software Engineering",
+    "section": "Test Your Code",
+    "text": "Test Your Code\nWrite unit tests to catch bugs early. For instance, you can use pytest to test the output of a preprocessing function:\ndef test_preprocess_data():\n    raw_data = pd.DataFrame({\"feature\": [1, 2, 3], \"target\": [0, 1, 0]})\n    processed = preprocess_data(raw_data)\n    assert not processed.isnull().values.any()"
+  },
+  {
+    "objectID": "index.html#handle-errors-gracefully",
+    "href": "index.html#handle-errors-gracefully",
+    "title": "How to Write Clean and Maintainable Data Science Code: Lessons from Software Engineering",
+    "section": "Handle Errors Gracefully",
+    "text": "Handle Errors Gracefully\nAdd error handling and logging to make debugging easier:\nimport logging\n\nlogging.basicConfig(level=logging.INFO)\n\ndef load_data(file_path):\n    try:\n        data = pd.read_csv(file_path)\n        return data\n    except FileNotFoundError as e:\n        logging.error(f\"File not found: {file_path}\")\n        raise e"
   }
 ]
