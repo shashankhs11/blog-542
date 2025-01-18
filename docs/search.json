@@ -2,7 +2,7 @@
   {
     "objectID": "about.html",
     "href": "about.html",
-    "title": "About",
+    "title": "Shashank",
     "section": "",
     "text": "About this blog"
   },
@@ -25,7 +25,7 @@
     "href": "index.html",
     "title": "How to Write Clean and Maintainable Data Science Code: Lessons from Software Engineering",
     "section": "",
-    "text": "Data science projects often begin as exploratory analyses with quick iterations and experiments. However, as projects grow, messy code and unorganized workflows can lead to reproducibility nightmares, debugging headaches, and team collaboration struggles.\nThe good news? Borrowing principles from software engineering can transform chaotic data science projects into clean, maintainable, and scalable systems. This blog dives into three core strategies—code organization, modular design, and best practices—to help you write data science code that’s a joy to work with."
+    "text": "Cleaning your code for data science projects"
   },
   {
     "objectID": "index.html#recommended-directory-structure",

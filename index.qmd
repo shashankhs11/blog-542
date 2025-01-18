@@ -6,6 +6,8 @@ categories: [Data Science]
 format: html
 ---
 
+![Cleaning your code for data science projects](clean-code.jpg)
+
 # Introduction
 
 Data science projects often begin as exploratory analyses with quick iterations and experiments. However, as projects grow, messy code and unorganized workflows can lead to reproducibility nightmares, debugging headaches, and team collaboration struggles.
